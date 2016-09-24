@@ -4,10 +4,6 @@ class Object
   end
 end
 
-
-def is_numeric?
-  Float(self) != nil rescue false	
-end
 def compute(a, operator, b)
 	a.to_f.send(operator.to_sym, b.to_f)	
 end
@@ -39,7 +35,6 @@ def get_stack
 end
 
 while :input
-	stack = get_stack
-	compute_stack(stack, 0)
+	compute_stack(stack = get_stack, 0)
 	p stack
 end
