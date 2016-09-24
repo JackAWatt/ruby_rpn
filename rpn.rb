@@ -29,8 +29,7 @@ def compute_stack(stack)
 end
 
 def get_stack
-	input = gets.strip
-	stack = input.gsub(/\s+/m, ' ').strip.split(" ")
+	stack = gets.strip.gsub(/\s+/m, ' ').strip.split(" ")
 end
 
 while :input
