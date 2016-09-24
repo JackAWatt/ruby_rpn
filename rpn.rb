@@ -13,7 +13,6 @@ i = 0
 def do_the_stuff(a, operator, b)
 	a.send(operator, b)	
 end
-def 
 
 input = gets.strip
 rpn_stack = input.gsub(/\s+/m, ' ').strip.split(" ")
