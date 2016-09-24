@@ -1,15 +1,13 @@
-class String
+class Object
   def numeric?
     Float(self) != nil rescue false
   end
 end
 
-class Float
-	def numeric?
-		Float(self) != nil rescue false
-	end
-end
 
+def is_numeric?
+  Float(self) != nil rescue false	
+end
 def compute(a, operator, b)
 	a.to_f.send(operator.to_sym, b.to_f)	
 end
@@ -19,7 +17,6 @@ def return_stack(stack, i)
 	stack.delete_at(i)
 	stack.delete_at(i-1)
 	return stack
-	
 end
 
 def compute_value(stack, i)
@@ -38,7 +35,7 @@ def compute_stack(stack, i)
 end
 
 def get_stack
-	stack = gets.strip.gsub(/\s+/m, ' ').strip.split(" ")
+	stack = gets.strip.gsub(/\s+/m, ' ').split(" ")
 end
 
 while :input
