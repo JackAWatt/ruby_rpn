@@ -5,10 +5,10 @@
 * takes 1 line of input in the form of "1 23  32 + 33 / 13 - / "
 
 * only four symbols work currently: 
-    * "+"
-    * "-"
-    * "*"
-    * "/"
+    * +
+    * -
+    * *
+    * /
     
 # to implement
 * exponents(^) "3 2 ^"
