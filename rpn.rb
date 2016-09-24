@@ -15,7 +15,7 @@ def compute(a, operator, b)
 end
 
 def compute_stack(stack, i)
-	while stack.length > 1
+	if stack.length > 1
 		if !stack[i].numeric?
 			stack[i-2] = compute(stack[i-2],stack[i],stack[i-1])
 			stack.delete_at(i)
