@@ -3,14 +3,17 @@ class String
     Float(self) != nil rescue false
   end
 end
+
 class Float
 	def numeric?
 		Float(self) != nil rescue false
 	end
 end
+
 def compute(a, operator, b)
 	a.to_f.send(operator.to_sym, b.to_f)	
 end
+
 def compute_stack(stack)
 	i = 0
 	while stack.length > 1
@@ -23,13 +26,19 @@ def compute_stack(stack)
 			i = i + 1
 		end
 	end
-	
 end
-input = gets.strip
-stack = input.gsub(/\s+/m, ' ').strip.split(" ")
-if stack.length < 3
-	puts "not enough operators"
-else
-	compute_stack(stack)
+
+def get_stack
+	input = gets.strip
+	stack = input.gsub(/\s+/m, ' ').strip.split(" ")
 end
-p stack
+
+while :input_given
+	stack = get_stack
+	if stack.length < 3
+		puts "not enough operators"
+	else
+		compute_stack(stack)
+	end
+	p stack
+end
