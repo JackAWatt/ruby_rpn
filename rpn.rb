@@ -10,24 +10,24 @@ class Fixnum
 end
 # 
 i = 0
-def do_the_stuff(a, operator, b)
+def compute(a, operator, b)
 	a.send(operator, b)	
 end
 
 input = gets.strip
-rpn_stack = input.gsub(/\s+/m, ' ').strip.split(" ")
-if rpn_stack.length < 3
+stack = input.gsub(/\s+/m, ' ').strip.split(" ")
+if stack.length < 3
 	puts "not enough operators"
 else
-	while rpn_stack.length > 1
-		if !rpn_stack[i].numeric?
-			rpn_stack[i - 2] = do_the_stuff(rpn_stack[i-2].to_i,rpn_stack[i].to_sym,rpn_stack[i-1].to_i)
-			rpn_stack.delete_at(i)
-			rpn_stack.delete_at(i-1)
+	while stack.length > 1
+		if !stack[i].numeric?
+			stack[i - 2] = compute(stack[i-2].to_i,stack[i].to_sym,stack[i-1].to_i)
+			stack.delete_at(i)
+			stack.delete_at(i-1)
 			i = 0
 		else
 			i = i + 1
 		end
 	end
 end
-p rpn_stack
+p stack
