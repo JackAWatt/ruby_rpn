@@ -33,12 +33,8 @@ def get_stack
 	stack = input.gsub(/\s+/m, ' ').strip.split(" ")
 end
 
-while :input_given
+while :input
 	stack = get_stack
-	if stack.length < 3
-		puts "not enough operators"
-	else
-		compute_stack(stack)
-	end
+	compute_stack(stack)
 	p stack
 end
