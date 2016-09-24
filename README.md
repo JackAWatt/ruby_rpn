@@ -1,4 +1,4 @@
 # ruby_rpn
 reverse polish notation calculator in ruby
 
-#[current version](https://repl.it/D3eA/23)
+#[current version](https://repl.it/D3eA/24)
