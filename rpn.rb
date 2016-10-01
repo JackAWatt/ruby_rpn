@@ -8,10 +8,13 @@ def compute(a, operator, b)
 	a.to_f.send(operator.to_sym, b.to_f)	
 end
 
+def stack_delete(stack, i)
+	stack.slice!(i-1..i)
+end
+
 def return_stack(stack, i)
 	stack[i-2] = compute_value(stack, i)
-	stack.delete_at(i)
-	stack.delete_at(i-1)
+	stack_delete(stack, i)
 	return stack
 end
 
@@ -35,6 +38,6 @@ def get_stack
 end
 
 while :input
-	compute_stack(stack = get_stack, 0)
+	compute_stack(stack = get_stack, 0) rescue false
 	p stack
 end
