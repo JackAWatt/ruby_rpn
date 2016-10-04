@@ -25,8 +25,10 @@ end
 def compute_stack(stack, i)
 	if stack.length > 1
 		if !stack[i].numeric?
-			stack = return_stack(stack, i)
-			compute_stack(stack,0)
+			if i > 1
+				stack = return_stack(stack, i)
+				compute_stack(stack,0)
+			end
 		else
 			compute_stack(stack,i + 1)
 		end
@@ -38,6 +40,9 @@ def get_stack
 end
 
 while :input
-	compute_stack(stack = get_stack, 0) rescue false
-	p stack
+	stack = get_stack
+	if stack.length % 2 != 0
+		compute_stack(stack, 0) rescue false
+		p stack
+	end
 end
