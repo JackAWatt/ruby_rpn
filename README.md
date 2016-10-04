@@ -1,6 +1,6 @@
 # reverse polish notation calculator in ruby
 
-#[current version](https://repl.it/D3eA/40)
+#[current version](https://repl.it/D3eA/43)
 
 * takes 1 line of input in the form of "1 23  32 + 33 / 13 - / "
 
@@ -10,6 +10,7 @@
     * *
     * /
     * %
+    * **
     
 # to implement
 * exponents(^) "3 2 ^"
