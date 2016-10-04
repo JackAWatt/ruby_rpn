@@ -10,7 +10,7 @@
     * *
     * /
     * %
-    * **
+    * \**
     
 # to implement
 * exponents(^) "3 2 ^"
