@@ -24,11 +24,8 @@ end
 
 def compute_stack(stack, i)
 	if stack.length > 1
-		if !stack[i].numeric?
-			if i > 1
-				stack = return_stack(stack, i)
-				compute_stack(stack,0)
-			end
+		if !stack[i].numeric? && i > 1
+			compute_stack(return_stack(stack, i),0)
 		else
 			compute_stack(stack,i + 1)
 		end
@@ -36,7 +33,7 @@ def compute_stack(stack, i)
 end
 
 def get_stack
-	stack = gets.strip.gsub(/\s+/m, ' ').split(" ")
+	gets.strip.gsub(/\s+/m, ' ').split(" ")
 end
 
 while :input
