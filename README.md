@@ -13,6 +13,5 @@
     * \**
     
 # to implement
-* exponents(^) "3 2 ^"
 * instead of failing reprompt
 * keep a log of inputs and allow cycling with arrows
